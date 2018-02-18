@@ -1,0 +1,39 @@
+<section>
+  <h2>Get Transcripts Data</h2>
+  <form class="form">
+    <mat-form-field>
+      <mat-select placeholder="Select Species" [(value)]="selectedSpecies">
+        <mat-option *ngFor="let option of species" [value]="option.value">
+          {{ option.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Gene Symbol" name="symbol" [(ngModel)]="geneSymbol" maxlength="6">
+      <mat-hint align="start">
+        <strong>e.g. BRAF, BRCA2</strong>
+      </mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Amino Acid" [(value)]="aminoAcidLetter">
+        <mat-option *ngFor="let option of aminoAcids" [value]="option">
+          {{ option }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Position in protein sequence" 
+      name="position" [(ngModel)]="positionValue">
+      <mat-hint align="start">
+        <strong>e.g. 200, 600</strong>
+      </mat-hint>
+    </mat-form-field>
+  </form>
+  <p class="button-container"><button mat-raised-button color="primary" (click)="getTranscripts()">Get Data</button></p>
+  <h3>{{messageForUser}}</h3>
+</section>
+<div *ngIf="loading" class="spinner">
+    <mat-spinner></mat-spinner>
+</div>
+
+<app-data-table [transcriptsData]="transcriptsData"></app-data-table>

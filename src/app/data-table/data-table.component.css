@@ -1,0 +1,36 @@
+.container{
+  width: 90%;
+  margin: auto;
+}
+.cards{
+  margin: 10px;    
+  padding: 15px 10px;
+}
+a.card-title{
+  text-decoration: none;
+  color: #0000d9;
+  font-weight: bold;
+  font-size: 16px;
+}
+a.card-title:hover{
+  color: #9c00b6;
+  text-decoration: underline;
+}
+ul.details{
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+ul.details li{
+  flex-basis: 32%;
+  color: #999;
+  padding: 4px 8px;
+}
+span.label-text{
+  display: inline-block;
+  padding-right: 10px;
+  font-weight: bold;
+  color: #000;
+}

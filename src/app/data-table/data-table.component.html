@@ -1,0 +1,20 @@
+<div class="container">
+    <mat-card class="cards" *ngFor="let item of transcriptsData">
+        <mat-card-header>
+            <mat-card-title>
+              <a class="card-title" href="http://www.ensembl.org/id/{{item.target.protein_id}}" target="_blank">
+                {{item.target.protein_id}}
+              </a>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <ul class="details">
+              <li><span class="label-text">Method :</span>{{item.method_link_type}}</li>
+              <li><span class="label-text">Type :</span>{{item.type}}</li>
+              <li><span class="label-text">Taxonomy Level :</span>{{item.taxonomy_level}}</li>
+              <li><span class="label-text">Source Species :</span>{{item.source.species}}</li>
+              <li><span class="label-text">Target Species :</span>{{item.target.species}}</li>
+            </ul>
+          </mat-card-content>
+    </mat-card>
+</div>
